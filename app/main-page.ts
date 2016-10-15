@@ -10,42 +10,12 @@ import {Checkbox} from './checkbox';
     providers: [TodoStore],
     template: `
 <StackLayout class='card'>
-    <Button class="add-button" text='Add' (tap)='addNew($event)'></Button>
+    <Button class="add-button" text='Start' (tap)='addNew($event)'></Button>
     <StackLayout orientation='vertical'>
         <StackLayout
             *ngFor="let todo of todoStore.todos"
             class="todo-item"
             (doubleTap)="edit(todo)">
-                <DockLayout *ngIf="!todo.editing" stretchLastChild="true">
-                    <Checkbox [checked]="todo.completed" (tap)="toggleCompletion(todo)"></Checkbox>
-                    <Label
-                        (tap)="toggleSelected(todo)"
-                        [class.complete]="todo.completed"
-                        [class.incomplete]="!todo.completed"
-                        class="todo-text"
-                        verticalAlignment="center"
-                        [style.minWidth]="200"
-                        [text]="todo.title"
-                        *ngIf="!todo.editing"
-                        dock="right"></Label>
-                </DockLayout>
-                <DockLayout *ngIf="todo.editing" stretchLastChild="true">
-                    <TextField
-                        #title
-                        class="todo-input"
-                        verticalAlignment="center"
-                        minWidth="200"
-                        [text]="todo.title"
-                        dock="left"></TextField>
-                    <Button text="Done"
-                        (tap)="finishEditing(todo, title.text)"
-                        dock="right"></Button>
-                </DockLayout>
-                <StackLayout orientation="horizontal" *ngIf="todo.selected && !todo.editing">
-                    <Button [text]="!todo.completed ? 'Complete!' : 'Undo complete'" (tap)="toggleCompletion(todo)"></Button>
-                    <Button text="Edit" (tap)="edit(todo)"></Button>
-                    <Button text="Delete" (tap)="delete(todo)"></Button>
-                </StackLayout>
         </StackLayout>
     </StackLayout>
 </StackLayout>
