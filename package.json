@@ -24,6 +24,7 @@
     "type": "git",
     "url": "git@github.com:UserUndefined/point-base-mobile.git"
   },
+  "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.1.0",
     "@angular/compiler": "~2.1.0",
