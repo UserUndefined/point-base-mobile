@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "com.userundefined.pointbase",
+    "id": "org.userundefined.pointbase",
     "tns-android": {
       "version": "2.3.0"
     },

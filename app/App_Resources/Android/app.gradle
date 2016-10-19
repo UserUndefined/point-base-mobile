@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "com.userundefined.pointbase"
+    applicationId = "org.userundefined.pointbase"
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
